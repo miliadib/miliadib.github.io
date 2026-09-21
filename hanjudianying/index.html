@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩剧电影网提供最新韩国电视剧、热门韩剧在线观看及高清电影资源，涵盖爱情、悬疑、古装等热门题材，更新及时，画质清晰。">
+    <meta name="keywords" content="韩剧电影,韩剧在线观看,韩剧推荐,韩国电影,最新韩剧">
+    <title>韩剧电影-最新韩国电视剧与高清电影在线观看平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e50914; /* Netflix Red vibe */
+            --secondary-color: #221f1f;
+            --accent-color: #46d369;
+            --text-main: #333;
+            --text-light: #fff;
+            --bg-body: #141414;
+            --bg-card: #1f1f1f;
+            --bg-hover: #2a2a2a;
+            --spacing-unit: 8px;
+            --container-width: 1200px;
+            --border-radius: 4px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            padding-left: 8px;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .section-title a:hover {
+            color: var(--text-light);
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(0, 0, 0, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #333;
+            padding: 12px 0;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--text-light);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            background: #333;
+            border: 1px solid transparent;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            width: 200px;
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            background: #444;
+            border-color: var(--primary-color);
+            outline: none;
+            width: 240px;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(to top, var(--bg-body) 0%, transparent 100%),
+                        url('https://picsum.photos/seed/hero1/1920/1080') center/cover no-repeat;
+            display: flex;
+            align-items: flex-end;
+            padding-bottom: 40px;
+            margin-bottom: 30px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2px 8px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 2px;
+            margin-bottom: 12px;
+            display: inline-block;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-meta {
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .hero-meta span::before {
+            content: "•";
+            margin: 0 8px;
+            color: #555;
+        }
+
+        .hero-meta span:first-child::before {
+            content: "";
+        }
+
+        .hero-desc {
+            color: #ddd;
+            margin-bottom: 24px;
+            max-width: 600px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #b20710;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background-color: rgba(109, 109, 110, 0.7);
+            color: white;
+            margin-left: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(109, 109, 110, 0.4);
+        }
+
+        /* Main Grid Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        /* Movie Grid */
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .movie-card {
+            background-color: var(--bg-card);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            z-index: 2;
+        }
+
+        .poster-wrapper {
+            position: relative;
+            padding-top: 150%; /* 2:3 Aspect Ratio */
+            overflow: hidden;
+        }
+
+        .poster-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .movie-card:hover .poster-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s;
+        }
+
+        .movie-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 48px;
+            height: 48px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .card-info {
+            padding: 12px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            color: var(--text-light);
+            margin-bottom: 6px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+        .rating {
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .sidebar-box {
+            background-color: var(--bg-card);
+            padding: 20px;
+            border-radius: var(--border-radius);
+        }
+
+        .sidebar-box h3 {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 8px;
+        }
+
+        .rank-list li {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            align-items: center;
+        }
+
+        .rank-num {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #555;
+            width: 24px;
+        }
+
+        .rank-num.top-3 {
+            color: var(--primary-color);
+        }
+
+        .rank-info {
+            flex: 1;
+        }
+
+        .rank-title {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            display: block;
+        }
+
+        .rank-sub {
+            color: #777;
+            font-size: 0.75rem;
+        }
+
+        /* Categories */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .category-item {
+            background-color: var(--bg-card);
+            padding: 16px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .category-item:hover {
+            background-color: var(--bg-hover);
+        }
+
+        .category-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .category-name {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Features/Info Section */
+        .info-section {
+            background-color: #1e1e1e;
+            padding: 40px 0;
+            margin-top: 40px;
+            border-top: 1px solid #333;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .info-item h4 {
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .info-item p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000;
+            padding: 40px 0 20px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .search-box input {
+                width: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">韩剧<span>电影</span></a>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">韩剧</a>
+                <a href="#">电影</a>
+                <a href="#">综艺</a>
+                <a href="#">分类</a>
+                <a href="#">排行榜</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索剧名、演员...">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <span class="hero-tag">本周热播</span>
+                <h1>黑暗荣耀：复仇篇</h1>
+                <div class="hero-meta">
+                    <span>2023</span>
+                    <span>16集</span>
+                    <span>韩剧 / 悬疑 / 犯罪</span>
+                    <span class="rating">★ 9.2</span>
+                </div>
+                <p class="hero-desc">文东恩在高中时期遭受了残酷的校园暴力，她蛰伏多年，精心策划了一场针对加害者的复仇行动，誓要将他们拉入地狱。</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary">立即观看</button>
+                    <button class="btn btn-secondary">加入片单</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Category Navigation -->
+            <section class="category-grid">
+                <div class="category-item">
+                    <span class="category-icon">🥀</span>
+                    <span class="category-name">爱情浪漫</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">🔪</span>
+                    <span class="category-name">悬疑惊悚</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">👑</span>
+                    <span class="category-name">古装历史</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">🚑</span>
+                    <span class="category-name">医疗职场</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">🎬</span>
+                    <span class="category-name">动作犯罪</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">🧟</span>
+                    <span class="category-name">丧尸科幻</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">🧹</span>
+                    <span class="category-name">职场生存</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">🧠</span>
+                    <span class="category-name">脑力智斗</span>
+                </div>
+            </section>
+
+            <div class="main-layout">
+                <!-- Main Content: Latest Updates -->
+                <section>
+                    <div class="section-title">
+                        <h2>最新更新</h2>
+                        <a href="#">查看更多 ></a>
+                    </div>
+                    <div class="movie-grid">
+                        <!-- Movie Card 1 -->
+                        <article class="movie-card">
+                            <div class="poster-wrapper">
+                                <img src="https://picsum.photos/seed/kdrama1/300/450" alt="黑暗荣耀海报">
+                                <div class="card-overlay">
+                                    <div class="play-icon">▶</div>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">黑暗荣耀：复仇篇</h3>
+                                <div class="card-meta">
+                                    <span>更新至16集</span>
+                                    <span class="rating">9.2</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Movie Card 2 -->
+                        <article class="movie-card">
+                            <div class="poster-wrapper">
+                                <img src="https://picsum.photos/seed/kdrama2/300/450" alt="鱿鱼游戏海报">
+                                <div class="card-overlay">
+                                    <div class="play-icon">▶</div>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">鱿鱼游戏 2</h3>
+                                <div class="card-meta">
+                                    <span>更新至01集</span>
+                                    <span class="rating">8.5</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Movie Card 3 -->
+                        <article class="movie-card">
+                            <div class="poster-wrapper">
+                                <img src="https://picsum.photos/seed/kdrama3/300/450" alt="泪之女王海报">
+                                <div class="card-overlay">
+                                    <div class="play-icon">▶</div>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">泪之女王</h3>
+                                <div class="card-meta">
+                                    <span>更新至12集</span>
+                                    <span class="rating">8.8</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Movie Card 4 -->
+                        <article class="movie-card">
+                            <div class="poster-wrapper">
+                                <img src="https://picsum.photos/seed/kdrama4/300/450" alt="异能海报">
+                                <div class="card-overlay">
+                                    <div class="play-icon">▶</div>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">异能</h3>
+                                <div class="card-meta">
+                                    <span>更新至08集</span>
+                                    <span class="rating">9.0</span>
+                                </div>
+                            </div>
+                        </article>
+                        
+                        <!-- Movie Card 5 -->
+                        <article class="movie-card">
+                            <div class="poster-wrapper">
+                                <img src="https://picsum.photos/seed/kdrama5/300/450" alt="财阀家的小儿子海报">
+                                <div class="card-overlay">
+                                    <div class="play-icon">▶</div>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">财阀家的小儿子</h3>
+                                <div class="card-meta">
+                                    <span>更新至16集</span>
+                                    <span class="rating">8.9</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Movie Card 6 -->
+                        <article class="movie-card">
+                            <div class="poster-wrapper">
+                                <img src="https://picsum.photos/seed/kdrama6/300/450" alt="黑暗荣耀海报">
+                                <div class="card-overlay">
+                                    <div class="play-icon">▶</div>
+                                </div>
+                            </div>
+                            <div class="card-info">
+                                <h3 class="card-title">黑暗荣耀：复仇篇</h3>
+                                <div class="card-meta">
+                                    <span>更新至16集</span>
+                                    <span class="rating">9.2</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Sidebar: Rankings -->
+                <aside>
+                    <div class="sidebar-box">
+                        <h3>本周热门排行</h3>
+                        <ul class="rank-list">
+                            <li>
+                                <span class="rank-num top-3">1</span>
+                                <div class="rank-info">
+                                    <span class="rank-title">黑暗荣耀：复仇篇</span>
+                                    <span class="rank-sub">悬疑 / 犯罪</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="rank-num top-3">2</span>
+                                <div class="rank-info">
+                                    <span class="rank-title">泪之女王</span>
+                                    <span class="rank-sub">爱情 / 剧情</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="rank-num top-3">3</span>
+                                <div class="rank-info">
+                                    <span class="rank-title">异能</span>
+                                    <span class="rank-sub">动作 / 奇幻</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="rank-num">4</span>
+                                <div class="rank-info">
+                                    <span class="rank-title">我的出走日记</span>
+                                    <span class="rank-sub">生活 / 治愈</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="rank-num">5</span>
+                                <div class="rank-info">
+                                    <span class="rank-title">客：The Guest</span>
+                                    <span class="rank-sub">惊悚 / 灵异</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-box">
+                        <h3>热门电影</h3>
+                        <ul class="rank-list">
+                            <li>
+                                <span class="rank-num top-3">1</span>
+                                <div class="rank-info">
+                                    <span class="rank-title">寄生虫</span>
+                                    <span class="rank-sub">剧情 / 惊悚</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="rank-num top-3">2</span>
+                                <div class="rank-info">
+                                    <span class="rank-title">釜山行</span>
+                                    <span class="rank-sub">丧尸 / 动作</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="rank-num top-3">3</span>
+                                <div class="rank-info">
+                                    <span class="rank-title">老男孩</span>
+                                    <span class="rank-sub">剧情 / 惊悚</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- Info Section -->
+        <section class="info-section">
+            <div class="container">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h4>高清画质播放</h4>
+                        <p>提供1080P、4K高清画质选择，支持倍速播放，带来影院级观影体验。</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>海量片库资源</h4>
+                        <p>涵盖韩剧、韩国电影、综艺及动漫，每日更新最新剧集，资源丰富。</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>无广告打扰</h4>
+                        <p>纯净播放环境，去除烦人弹窗广告，让您专注于精彩剧情。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">网站简介</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">韩剧排行榜</a></li>
+                        <li><a href="#">最新电影</a></li>
+                        <li><a href="#">高分推荐</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">播放器下载</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 韩剧电影网 版权所有. 本站所有内容均来自互联网，仅供学习交流使用。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+          </html>
