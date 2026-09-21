@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="snowing 是一个专注于冬季景观摄影、雪景创作指南及冬季户外生活方式的综合性内容平台。提供雪景拍摄技巧、雪景设计灵感以及冬季安全出行建议。">
+    <meta name="keywords" content="snowing, 雪景, 冬季摄影, 雪景设计, 冬季户外">
+    <title>snowing - 冬季雪景摄影与生活方式指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --snow-white: #f8f9fa;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--snow-white);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            color: var(--text-dark);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .cta-btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), 
+                        url('https://picsum.photos/seed/snowinghero/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 2rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+        }
+
+        /* Photo Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            position: relative;
+            group: hover;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.05);
+        }
+
+        .gallery-info {
+            padding: 1.5rem;
+        }
+
+        .gallery-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-info p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #eef2f7;
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: #f0f4f8;
+            padding: 5rem 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .feature-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Guide Section */
+        .guide-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .guide-content h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .guide-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+        }
+
+        .guide-steps {
+            margin-top: 2rem;
+        }
+
+        .step {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-number {
+            background-color: var(--accent-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .step-text p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .sidebar-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            margin-top: 2rem;
+        }
+
+        .sidebar-card h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .sidebar-list li {
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .sidebar-list a {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .sidebar-list a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+
+            .guide-container {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">snowing<span>.</span></a>
+            <nav class="nav-links">
+                <a href="#gallery">摄影作品</a>
+                <a href="#guide">创作指南</a>
+                <a href="#tips">冬季贴士</a>
+                <a href="#about">关于我们</a>
+            </nav>
+            <a href="#subscribe" class="cta-btn">订阅周刊</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>捕捉冬日的纯净之美</h1>
+                <p>从静谧的林间小径到繁华都市的银装素裹，snowing 带您探索冬季摄影与生活方式的无限可能。</p>
+                <div class="hero-buttons">
+                    <a href="#gallery" class="btn-primary">浏览精选图集</a>
+                    <a href="#guide" class="btn-secondary">阅读拍摄指南</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">❄️</div>
+                        <h3>专业摄影技巧</h3>
+                        <p>分享雪景拍摄的曝光控制、构图法则与后期处理心得，助您拍出大片。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🏔️</div>
+                        <h3>户外探索指南</h3>
+                        <p>提供冬季户外活动的安全建议与装备推荐，让您的旅行更安心。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>室内雪景灵感</h3>
+                        <p>展示如何利用自然光与家居布置营造温馨的冬日氛围。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="container">
+            <div class="section-header">
+                <h2>精选雪景摄影</h2>
+                <p>来自全球摄影师的冬日瞬间</p>
+            </div>
+            <div class="gallery-grid">
+                <article class="gallery-item">
+                    <img src="https://picsum.photos/seed/snow1/400/300.jpg" alt="静谧雪林" class="gallery-img">
+                    <div class="gallery-info">
+                        <h3>静谧雪林</h3>
+                        <p>清晨的第一缕阳光穿透薄雾，照亮了被积雪覆盖的针叶林。</p>
+                        <span class="tag">自然风光</span>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <img src="https://picsum.photos/seed/snow2/400/300.jpg" alt="城市雪景" class="gallery-img">
+                    <div class="gallery-info">
+                        <h3>城市银装</h3>
+                        <p>繁华都市在雪夜的灯光下呈现出别样的宁静与浪漫。</p>
+                        <span class="tag">城市夜景</span>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <img src="https://picsum.photos/seed/snow3/400/300.jpg" alt="雪山远景" class="gallery-img">
+                    <div class="gallery-info">
+                        <h3>雪山远景</h3>
+                        <p>巍峨的雪山在蓝天映衬下显得格外庄严与神圣。</p>
+                        <span class="tag">山脉</span>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <img src="https://picsum.photos/seed/snow4/400/300.jpg" alt="雪地足迹" class="gallery-img">
+                    <div class="gallery-info">
+                        <h3>雪地足迹</h3>
+                        <p>一只孤独的鸟儿在雪地上留下的痕迹，充满了故事感。</p>
+                        <span class="tag">微距</span>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <img src="https://picsum.photos/seed/snow5/400/300.jpg" alt="雪中建筑" class="gallery-img">
+                    <div class="gallery-info">
+                        <h3>雪中古堡</h3>
+                        <p>古老的建筑被厚厚的积雪覆盖，仿佛穿越回了中世纪。</p>
+                        <span class="tag">建筑</span>
+                    </div>
+                </article>
+                <article class="gallery-item">
+                    <img src="https://picsum.photos/seed/snow6/400/300.jpg" alt="冰凌挂饰" class="gallery-img">
+                    <div class="gallery-info">
+                        <h3>冰凌挂饰</h3>
+                        <p>屋檐下晶莹剔透的冰凌，折射着冬日的光芒。</p>
+                        <span class="tag">细节</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="container">
+            <div class="guide-container">
+                <div class="guide-content">
+                    <div class="section-header" style="text-align: left;">
+                        <h2>如何拍好雪景照片</h2>
+                        <p>掌握这几个关键步骤，让您的冬季摄影水平大幅提升。</p>
+                    </div>
+                    <p>雪景摄影的核心在于控制曝光与色彩。雪是高反光的物体，容易导致相机过曝。因此，在拍摄时通常需要增加曝光补偿，并使用偏振镜来减少雪面的反光，增强色彩饱和度。</p>
+                    <p>此外，选择合适的时间段至关重要。黄金时刻（日出后和日落前）的光线柔和温暖，能赋予雪景层次感；而阴天则能提供均匀的漫射光，适合拍摄纯净、细节丰富的画面。</p>
+                    
+                    <div class="guide-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-text">
+                                <h4>调整曝光补偿</h4>
+                                <p>建议增加 1 到 2 档曝光，以避免画面过白，还原雪的细节。</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-text">
+                                <h4>利用偏振镜</h4>
+                                <p>有效消除雪地表面的眩光，使蓝天更蓝，雪地更白。</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-text">
+                                <h4>寻找前景元素</h4>
+                                <p>加入树木、围栏或人物作为前景，增加画面的纵深感。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <aside>
+                    <div class="sidebar-card">
+                        <h4>热门专题</h4>
+                        <ul class="sidebar-list">
+                            <li><a href="#">冬季极简主义风格</a></li>
+                            <li><a href="#">雪景人像布光技巧</a></li>
+                            <li><a href="#">如何选择保暖装备</a></li>
+                            <li><a href="#">雪地行车安全指南</a></li>
+                            <li><a href="#">冬季调色预设分享</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-card">
+                        <h4>摄影器材推荐</h4>
+                        <ul class="sidebar-list">
+                            <li><a href="#">广角镜头选择</a></li>
+                            <li><a href="#">防寒电池保护</a></li>
+                            <li><a href="#">防水相机包评测</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Tips Section -->
+        <section id="tips" style="background-color: var(--snow-white); padding: 4rem 2rem;">
+            <div class="container">
+                <div class="section-header">
+                    <h2>冬季出行小贴士</h2>
+                    <p>安全与舒适是享受冬日时光的前提</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card" style="text-align: left;">
+                        <h4 style="color: var(--accent-color);">衣物分层</h4>
+                        <p style="font-size: 0.9rem;">采用“三层穿衣法”：排汗层、保暖层和防风层，便于根据体温调节。</p>
+                    </div>
+                    <div class="feature-card" style="text-align: left;">
+                        <h4 style="color: var(--accent-color);">关注路况</h4>
+                        <p style="font-size: 0.9rem;">出行前务必查看气象预报及道路结冰预警，避免在恶劣天气驾车。</p>
+                    </div>
+                    <div class="feature-card" style="text-align: left;">
+                        <h4 style="color: var(--accent-color);">保护皮肤</h4>
+                        <p style="font-size: 0.9rem;">冬季空气干燥，务必做好保湿，并涂抹防晒霜，雪地反射的紫外线同样强烈。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="about">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="color: white; margin-bottom: 1rem; display: inline-block;">snowing<span>.</span></a>
+                <p style="color: #bdc3c7; font-size: 0.9rem;">致力于分享冬季美学、摄影技巧与生活方式，让更多人发现冬日的独特魅力。</p>
+            </div>
+            <div class="footer-col">
+                <h4>探索</h4>
+                <ul>
+                    <li><a href="#">摄影作品</a></li>
+                    <li><a href="#">创作指南</a></li>
+                    <li><a href="#">旅行攻略</a></li>
+                    <li><a href="#">器材评测</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>社区</h4>
+                <ul>
+                    <li><a href="#">加入摄影群</a></li>
+                    <li><a href="#">投稿分享</a></li>
+                    <li><a href="#">每周挑战</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li><a href="#">合作咨询</a></li>
+                    <li><a href="#">广告投放</a></li>
+                    <li><a href="#">用户反馈</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 snowing Winter Photography. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+                      </html>
