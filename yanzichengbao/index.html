@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="燕子城堡官方门户 - 探索神秘的自然栖息地、建筑美学与生态保护故事。提供燕子迁徙路线、筑巢指南及生态旅游资讯。">
+    <meta name="keywords" content="燕子城堡, 燕子, 城堡, 生态, 迁徙, 建筑, 自然, 筑巢">
+    <title>燕子城堡-自然生态与建筑美学的探索指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://picsum.photos/seed/castle_hero/1920/1080.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto 0;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Features / Architecture */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        /* Nesting Guide */
+        .guide-container {
+            background-color: #fff;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .guide-list {
+            counter-reset: step;
+        }
+
+        .guide-item {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .guide-item::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: bold;
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .faq-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-wrap: wrap;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 1rem;
+                text-align: center;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12,2L2,12H5V22H19V12H22L12,2M12,4.5L18.5,11H17V20H7V11H5.5L12,4.5Z" />
+                </svg>
+                燕子城堡
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#about">关于城堡</a></li>
+                    <li><a href="#features">建筑特色</a></li>
+                    <li><a href="#nesting">筑巢指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>燕子城堡</h1>
+                <p>探索自然栖息地与人类文明共存的奇迹，感受燕子筑巢的智慧与建筑艺术的完美融合。</p>
+                <a href="#about" class="btn">开始探索</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="container">
+            <h2 class="section-title">关于燕子城堡</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>燕子城堡并非一座传统的石砌建筑，而是指那些因燕子常年聚集栖息而得名的古老村落、遗迹或自然景观。在许多文化中，燕子的归来象征着春天的到来与繁荣的预兆。这些地方往往拥有独特的气候条件、丰富的昆虫资源以及适合筑巢的古老建筑结构，成为了燕子与人类共同生活的家园。</p>
+                    <p>这里的每一块砖石、每一根屋梁，都见证了燕子与人类跨越千年的和谐共生。从东亚的古老村落到欧洲的乡村遗迹，燕子城堡以其独特的生态价值和建筑美学，吸引着自然爱好者、建筑学家以及寻求心灵宁静的旅行者。</p>
+                    <a href="#" style="color: var(--accent-color); font-weight: bold;">阅读更多历史故事 &rarr;</a>
+                </div>
+                <img src="https://picsum.photos/seed/castle_about/600/400.jpg" alt="燕子城堡景观" class="about-image">
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" style="background-color: #eef2f5;">
+            <div class="container">
+                <h2 class="section-title">建筑与生态特色</h2>
+                <div class="features-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">🏛️</div>
+                        <h3>古建筑结构</h3>
+                        <p>利用传统木梁与泥墙结构，为燕子提供了天然的庇护所，这种设计在几百年前就被当地居民所采用。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🦅</div>
+                        <h3>生态共存</h3>
+                        <p>燕子捕食害虫，保护农作物，而人类则提供了筑巢的场所。这种互利共生的关系维持了数百年的生态平衡。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🎨</div>
+                        <h3>文化符号</h3>
+                        <p>燕子在文学、绘画和民间传说中占据重要地位，是当地非物质文化遗产的重要组成部分。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nesting Guide Section -->
+        <section id="nesting" class="container">
+            <h2 class="section-title">燕子筑巢指南</h2>
+            <div class="guide-container">
+                <p style="margin-bottom: 2rem;">如果您希望在家中或花园里吸引燕子筑巢，了解正确的步骤至关重要。这不仅能为您的庭院增添生机，还能有效控制蚊虫数量。</p>
+                <div class="guide-list">
+                    <div class="guide-item">
+                        <h3>选择合适的地点</h3>
+                        <p>燕子喜欢在屋檐下、屋檐角或阳台上方等有遮蔽、通风且不易被风雨直吹的地方悬挂鸟巢箱。</p>
+                    </div>
+                    <div class="guide-item">
+                        <h3>保持环境清洁</h3>
+                        <p>确保巢箱内部干燥、无异味。旧的巢穴残留物可能会阻碍燕子筑巢，建议每年清理一次。</p>
+                    </div>
+                    <div class="guide-item">
+                        <h3>提供筑巢材料</h3>
+                        <p>可以在巢箱附近放置干草、泥土、羽毛等天然材料，方便燕子取用。</p>
+                    </div>
+                    <div class="guide-item">
+                        <h3>避免使用化学药剂</h3>
+                        <p>在筑巢期间，请避免在巢箱周围喷洒杀虫剂，以免伤害到脆弱的雏鸟。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" style="background-color: #eef2f5;">
+            <div class="container">
+                <h2 class="section-title">常见问题 (FAQ)</h2>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>燕子会攻击人类吗？</h3>
+                        <p>燕子通常是温和的鸟类，不会主动攻击人类。只有在保护巢穴或雏鸟时，才可能表现出攻击性。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>为什么我的房子没有燕子来？</h3>
+                        <p>可能是因为缺乏合适的巢箱位置，或者周围环境过于嘈杂、有猫狗等天敌干扰。尝试悬挂巢箱并保持安静。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>如何区分家燕和雨燕？</h3>
+                        <p>家燕尾巴呈深叉状，飞行时尾羽展开呈剪刀状；雨燕翅膀长且尖，飞行时尾羽呈新月状。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>燕子城堡</h4>
+                    <p>致力于推广人与自然和谐共生的理念，分享燕子文化、建筑美学及生态保护知识。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#features">建筑展示</a></li>
+                        <li><a href="#nesting">筑巢指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>邮箱：contact@yanzicastle.com</li>
+                        <li>电话：400-123-4567</li>
+                        <li>地址：生态保护示范区</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 燕子城堡生态文化网. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('active');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('nav-menu').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
