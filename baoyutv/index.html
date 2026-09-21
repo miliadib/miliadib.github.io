@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="鲍鱼TV - 海鲜美食烹饪与选购指南，提供鲍鱼种类介绍、鲜活养殖基地展示、家常鲍鱼做法大全及海鲜市场行情资讯。">
+    <meta name="keywords" content="鲍鱼tv, 鲍鱼做法, 鲍鱼价格, 海鲜选购, 活鲍鱼养殖">
+    <title>鲍鱼tv-海鲜美食烹饪与选购指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d35400;
+            --primary-dark: #a04000;
+            --secondary-color: #2c3e50;
+            --bg-color: #fdfbf7;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff5eb 0%, #ffffff 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .tag {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .tag:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Section Styles */
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-title a {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: normal;
+        }
+
+        /* Article List */
+        .article-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .article-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .article-thumb {
+            width: 200px;
+            height: 140px;
+            background-color: #eee;
+            border-radius: 8px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .article-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .article-info {
+            flex: 1;
+        }
+
+        .article-category {
+            font-size: 12px;
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .article-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .article-meta {
+            font-size: 12px;
+            color: #999;
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Sidebar */
+        aside .widget {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .price-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 15px;
+        }
+
+        .price-list li:last-child {
+            border-bottom: none;
+        }
+
+        .price-value {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .guide-list li {
+            margin-bottom: 12px;
+        }
+
+        .guide-list a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        .guide-list a:hover {
+            background-color: #f9f9f9;
+            color: var(--primary-color);
+        }
+
+        .guide-icon {
+            width: 32px;
+            height: 32px;
+            background-color: #fff0e6;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        /* Categories Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .cat-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .cat-card:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .cat-card:hover .cat-icon {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .cat-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 15px;
+            background-color: #fff0e6;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #ccc;
+            padding: 50px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .article-card {
+                flex-direction: column;
+            }
+
+            .article-thumb {
+                width: 100%;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <div class="logo">
+            <span>🐟</span> 鲍鱼TV
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#recipes">烹饪指南</a></li>
+                <li><a href="#market">市场行情</a></li>
+                <li><a href="#faq">选购百科</a></li>
+            </ul>
+        </nav>
+        <button class="search-btn" aria-label="搜索">🔍</button>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索深海珍馐，品味极致鲜美</h1>
+            <p>鲍鱼TV为您提供从鲍鱼品种鉴别到家常做法的全方位指南，助您成为海鲜烹饪专家。</p>
+            <div class="hero-tags">
+                <a href="#" class="tag">蒜蓉粉丝蒸鲍鱼</a>
+                <a href="#" class="tag">澳洲鲍鱼</a>
+                <a href="#" class="tag">皱纹盘鲍</a>
+                <a href="#" class="tag">养殖技术</a>
+                <a href="#" class="tag">营养功效</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Left Content -->
+        <div class="content-area">
+            <!-- Featured Section -->
+            <section id="recipes">
+                <div class="section-title">
+                    <h2>热门烹饪做法</h2>
+                    <a href="#">查看更多 &rarr;</a>
+                </div>
+                
+                <article class="article-card">
+                    <div class="article-thumb">
+                        <img src="https://picsum.photos/seed/abalone1/400/300" alt="蒜蓉粉丝蒸鲍鱼">
+                    </div>
+                    <div class="article-info">
+                        <div class="article-category">经典粤菜</div>
+                        <h3 class="article-title">蒜蓉粉丝蒸鲍鱼：鲜美多汁的家常做法</h3>
+                        <p class="article-excerpt">鲍鱼洗净去肠，铺上蒜蓉粉丝，蒸制时间控制在5分钟以内，最大程度保留原汁原味。搭配蒸鱼豉油，口感绝佳。</p>
+                        <div class="article-meta">
+                            <span>🕒 15分钟</span>
+                            <span>👥 4人份</span>
+                            <span>🔥 难度：中等</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-thumb">
+                        <img src="https://picsum.photos/seed/abalone2/400/300" alt="红烧鲍鱼">
+                    </div>
+                    <div class="article-info">
+                        <div class="article-category">浓油赤酱</div>
+                        <h3 class="article-title">红烧鲍鱼：宴客硬菜的制作秘籍</h3>
+                        <p class="article-excerpt">选用干鲍鱼提前泡发，加入冰糖、老抽、生抽和香料小火慢炖。成品色泽红亮，肉质软糯，回味无穷。</p>
+                        <div class="article-meta">
+                            <span>🕒 2小时</span>
+                            <span>👥 6人份</span>
+                            <span>🔥 难度：困难</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <div class="article-thumb">
+                        <img src="https://picsum.photos/seed/abalone3/400/300" alt="鲍鱼粥">
+                    </div>
+                    <div class="article-info">
+                        <div class="article-category">养生粥品</div>
+                        <h3 class="article-title">鲜虾鲍鱼粥：暖胃养生的最佳选择</h3>
+                        <p class="article-excerpt">将鲍鱼肉切丁，与大米同煮至软烂，加入鲜虾和姜丝。出锅前撒入葱花和胡椒粉，鲜美暖胃，适合秋冬季节。</p>
+                        <div class="article-meta">
+                            <span>🕒 40分钟</span>
+                            <span>👥 2人份</span>
+                            <span>🔥 难度：简单</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Categories Section -->
+            <section id="categories">
+                <div class="section-title">
+                    <h2>食材分类</h2>
+                </div>
+                <div class="category-grid">
+                    <div class="cat-card">
+                        <div class="cat-icon">🦪</div>
+                        <h4>干鲍鱼</h4>
+                        <p style="font-size:12px; margin-top:5px; opacity:0.8;">泡发与收藏</p>
+                    </div>
+                    <div class="cat-card">
+                        <div class="cat-icon">🐚</div>
+                        <h4>鲜鲍鱼</h4>
+                        <p style="font-size:12px; margin-top:5px; opacity:0.8;">即食处理</p>
+                    </div>
+                    <div class="cat-card">
+                        <div class="cat-icon">🥘</div>
+                        <h4>鲍汁</h4>
+                        <p style="font-size:12px; margin-top:5px; opacity:0.8;">提鲜调料</p>
+                    </div>
+                    <div class="cat-card">
+                        <div class="cat-icon">🧂</div>
+                        <h4>调料搭配</h4>
+                        <p style="font-size:12px; margin-top:5px; opacity:0.8;">葱姜蒜香料</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="widget">
+                <div class="section-title" style="font-size: 20px; border:none; padding:0; margin-bottom:15px;">
+                    <h2>今日行情</h2>
+                </div>
+                <ul class="price-list">
+                    <li>
+                        <span>澳洲岩鲍</span>
+                        <span class="price-value">¥380/斤</span>
+                    </li>
+                    <li>
+                        <span>皱纹盘鲍</span>
+                        <span class="price-value">¥120/斤</span>
+                    </li>
+                    <li>
+                        <span>网鲍</span>
+                        <span class="price-value">¥450/斤</span>
+                    </li>
+                    <li>
+                        <span>杂色鲍</span>
+                        <span class="price-value">¥35/斤</span>
+                    </li>
+                    <li>
+                        <span>干鲍鱼(头数)</span>
+                        <span class="price-value">¥2000+/斤</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="widget">
+                <div class="section-title" style="font-size: 20px; border:none; padding:0; margin-bottom:15px;">
+                    <h2>新手指南</h2>
+                </div>
+                <ul class="guide-list">
+                    <li>
+                        <a href="#">
+                            <div class="guide-icon">✓</div>
+                            <span>如何辨别鲍鱼新鲜度</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="guide-icon">✓</div>
+                            <span>干鲍鱼泡发全过程图解</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="guide-icon">✓</div>
+                            <span>鲍鱼不能和什么一起吃</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="guide-icon">✓</div>
+                            <span>海鲜过敏人群注意事项</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="widget" style="background: #eef2f5; border: 1px solid #dce1e6;">
+                <h3 style="margin-bottom:10px; color:var(--secondary-color);">💡 小贴士</h3>
+                <p style="font-size:13px; color:var(--text-light);">清洗鲍鱼时，用牙刷刷去黑色内脏和边缘的粘液，可有效去除腥味。</p>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h3>鲍鱼TV</h3>
+            <p style="font-size:14px; line-height:1.8;">专注于海鲜美食文化的传播，致力于为用户提供最专业、最实用的鲍鱼烹饪与选购指南。</p>
+        </div>
+        <div class="footer-col">
+            <h3>快速导航</h3>
+            <ul>
+                <li><a href="#">做菜大全</a></li>
+                <li><a href="#">食材百科</a></li>
+                <li><a href="#">市场动态</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>关注我们</h3>
+            <ul>
+                <li><a href="#">微信公众号</a></li>
+                <li><a href="#">新浪微博</a></li>
+                <li><a href="#">美食社区</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; 2023 鲍鱼TV. All Rights Reserved. 仅供学习交流使用，严禁用于商业用途。</p>
+    </div>
+</footer>
+
+</body>
+                          </html>
