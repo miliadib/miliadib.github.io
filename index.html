@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南粤金税-智慧税务解决方案与财税合规服务平台</title>
+    <meta name="description" content="南粤金税专注于为中小企业及大中型企业提供全方位的税务筹划、金税四期应对、财务共享中心搭建及数字化财税管理服务，助力企业安全合规经营。">
+    <meta name="keywords" content="南粤金税,金税四期,税务筹划,财税合规,中小企业财税,财务共享">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0f4c81;
+            --primary-dark: #0a3d6b;
+            --accent-color: #d4af37;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-light: #f8f9fa;
+            --bg-white: #ffffff;
+            --border-color: #e0e0e0;
+            --spacing-unit: 8px;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-white);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin: 8px auto 0;
+        }
+
+        .section-title p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        /* Header */
+        header {
+            height: var(--header-height);
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-cta {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: var(--header-height);
+            background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 30px;
+            background: var(--bg-light);
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            background: #fff;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(15, 76, 129, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        /* Pain Points Section */
+        .pain-points {
+            padding: 80px 0;
+            background-color: var(--bg-light);
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .pain-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .pain-number {
+            font-size: 60px;
+            font-weight: 700;
+            color: rgba(15, 76, 129, 0.1);
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .pain-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .pain-item p {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+        }
+
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-item {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            transition: border-color 0.3s ease;
+        }
+
+        .service-item:hover {
+            border-color: var(--primary-color);
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .service-header h3 {
+            font-size: 20px;
+            color: var(--text-main);
+        }
+
+        .service-content {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .service-content ul {
+            list-style: disc;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        .service-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Compliance & News */
+        .compliance {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .compliance-container {
+            display: flex;
+            gap: 50px;
+        }
+
+        .compliance-main {
+            flex: 2;
+        }
+
+        .compliance-sidebar {
+            flex: 1;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 20px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .news-date {
+            min-width: 80px;
+            text-align: center;
+            background-color: var(--bg-light);
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .news-date .day {
+            display: block;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .news-date .month {
+            display: block;
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 5px;
+        }
+
+        .news-content h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .news-content h4 a:hover {
+            color: var(--primary-color);
+        }
+
+        .news-content p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .sidebar-box {
+            background-color: var(--bg-light);
+            padding: 25px;
+            border-radius: 8px;
+        }
+
+        .sidebar-box h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        .guide-list li {
+            margin-bottom: 12px;
+        }
+
+        .guide-list a {
+            font-size: 15px;
+            color: var(--text-main);
+            display: block;
+        }
+
+        .guide-list a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-section .btn {
+            background-color: #fff;
+            color: var(--primary-color);
+            border: none;
+        }
+
+        .cta-section .btn:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #ccc;
+            padding: 60px 0 20px;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p {
+            margin-bottom: 10px;
+            line-height: 1.8;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            text-align: center;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-text p {
+                margin: 0 auto 30px;
+            }
+
+            .pain-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .header-cta {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+            }
+
+            .pain-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .compliance-container {
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                南粤金税 <span>Southern Tax</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#services">解决方案</a></li>
+                    <li><a href="#compliance">政策解读</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="#contact" class="btn btn-primary">免费咨询</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>紧跟金税四期步伐，构建企业财税安全防线</h1>
+                    <p>南粤金税致力于为中小企业提供专业的税务筹划与合规管理服务。通过数字化工具与专家团队，帮助企业降低税务风险，优化税负结构，实现财务健康可持续发展。</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; @media(min-width: 992px){justify-content: flex-start;}">
+                        <a href="#services" class="btn btn-primary">探索服务</a>
+                        <a href="#contact" class="btn btn-outline">预约专家</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://picsum.photos/seed/tax_solutions/600/400" alt="财税管理系统界面示意图" width="600" height="400">
+                </div>
+            </div>
+        </section>
+
+        <!-- Pain Points -->
+        <section class="pain-points">
+            <div class="container">
+                <div class="pain-grid">
+                    <div class="pain-item">
+                        <div class="pain-number">01</div>
+                        <h3>金税四期预警</h3>
+                        <p>企业进项发票缺失、税负率异常，系统自动预警，随时面临税务稽查风险。</p>
+                    </div>
+                    <div class="pain-item">
+                        <div class="pain-number">02</div>
+                        <h3>税务筹划误区</h3>
+                        <p>缺乏专业指导，误用税收优惠政策，导致税务处罚，影响企业信誉。</p>
+                    </div>
+                    <div class="pain-item">
+                        <div class="pain-number">03</div>
+                        <h3>财务数据混乱</h3>
+                        <p>财务人员流动性大，账务处理不规范，难以支撑企业融资与战略决策。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="container">
+                <div class="section-title">
+                    <h2>核心服务优势</h2>
+                    <p>依托资深税务专家团队，为您提供全流程财税管理支持</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                            </svg>
+                        </div>
+                        <h3>风险管控</h3>
+                        <p>建立企业税务健康体检机制，提前识别潜在风险点，出具合规整改方案。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <h3>税务筹划</h3>
+                        <p>合法合规利用地方税收优惠政策，优化业务流程，在政策允许范围内降低综合税负。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3>财务共享</h3>
+                        <p>搭建高效的财务共享中心，实现票据自动化处理与财务报表实时生成。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>专家团队</h3>
+                        <p>拥有十年以上经验的注册会计师、税务师团队，为您提供一对一专业咨询。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>专业解决方案</h2>
+                    <p>针对不同发展阶段的企业需求，定制化财税管理方案</p>
+                </div>
+                <div class="service-list">
+                    <article class="service-item">
+                        <div class="service-header">
+                            <h3>初创企业财税代理</h3>
+                        </div>
+                        <div class="service-content">
+                            <p>从公司注册、记账报税到银行开户，提供全流程一站式服务，让初创企业专注业务发展。</p>
+                            <ul>
+                                <li>工商注册与变更代办</li>
+                                <li>代理记账与纳税申报</li>
+                                <li>财务制度搭建与规范</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="service-item">
+                        <div class="service-header">
+                            <h3>金税四期合规应对</h3>
+                        </div>
+                        <div class="service-content">
+                            <p>针对大数据监管环境，通过业务流、资金流、票据流的三流合一，确保企业经营安全。</p>
+                            <ul>
+                                <li>进销项发票合规梳理</li>
+                                <li>关联交易与转让定价分析</li>
+                                <li>税务稽查应对与自查</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="service-item">
+                        <div class="service-header">
+                            <h3>高新企业税务筹划</h3>
+                        </div>
+                        <div class="service-content">
+                            <p>深度挖掘高新技术企业税收优惠政策，最大化利用研发费用加计扣除等红利。</p>
+                            <ul>
+                                <li>研发项目立项与归集辅导</li>
+                                <li>高新技术企业认定咨询</li>
+                                <li>研发费用加计扣除申报</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compliance & News -->
+        <section class="compliance" id="compliance">
+            <div class="container">
+                <div class="section-title">
+                    <h2>政策解读与资讯</h2>
+                    <p>解读最新税收法规，分享行业动态与财税知识</p>
+                </div>
+                <div class="compliance-container">
+                    <div class="compliance-main">
+                        <article class="news-item">
+                            <div class="news-date">
+                                <span class="day">15</span>
+                                <span class="month">10月</span>
+                            </div>
+                            <div class="news-content">
+                                <h4><a href="#">金税四期下，企业如何进行合理的税务筹划？</a></h4>
+                                <p>随着金税四期的全面上线，大数据监管能力显著增强。企业在追求利润最大化的同时，必须将合规放在首位。本文详细解析了在当前政策环境下，企业应如何通过业务重组和合理利用优惠政策来降低税负...</p>
+                            </div>
+                        </article>
+                        <article class="news-item">
+                            <div class="news-date">
+                                <span class="day">08</span>
+                                <span class="month">10月</span>
+                            </div>
+                            <div class="news-content">
+                                <h4><a href="#">最新！研发费用加计扣除比例提高至100%政策解读</a></h4>
+                                <p>为支持科技创新，国家持续加大税收优惠力度。针对制造业等行业的研发活动，最新政策明确了具体的执行口径和申报注意事项。南粤金税专家为您梳理关键点，确保企业不错过每一分红利...</p>
+                            </div>
+                        </article>
+                        <article class="news-item">
+                            <div class="news-date">
+                                <span class="day">28</span>
+                                <span class="month">09月</span>
+                            </div>
+                            <div class="news-content">
+                                <h4><a href="#">中小企业财务共享中心建设的必要性分析</a></h4>
+                                <p>随着企业规模的扩大，传统的财务管理模式已难以满足需求。建立财务共享中心不仅能提高效率，还能降低成本。本文探讨了中小企业在建设共享中心时面临的挑战与解决方案...</p>
+                            </div>
+                        </article>
+                    </div>
+                    <aside class="compliance-sidebar">
+                        <div class="sidebar-box">
+                            <h3>财税指南</h3>
+                            <ul class="guide-list">
+                                <li><a href="#">2024年小微企业税收优惠政策汇总</a></li>
+                                <li><a href="#">发票开具与报销常见问题解答</a></li>
+                                <li><a href="#">如何避免虚开增值税发票的法律风险</a></li>
+                                <li><a href="#">个人所得税专项附加扣除指南</a></li>
+                                <li><a href="#">企业注销流程及税务清算注意事项</a></li>
+                            </ul>
+                        </div>
+                        <div class="sidebar-box" style="margin-top: 30px; background-color: var(--primary-color); color: white;">
+                            <h3 style="border-color: rgba(255,255,255,0.3);">联系我们</h3>
+                            <p style="color: rgba(255,255,255,0.8); margin-bottom: 10px;">专业顾问一对一服务</p>
+                            <p>电话：400-123-4567</p>
+                            <p>邮箱：contact@southerntax.com</p>
+                            <a href="#" class="btn" style="background: white; color: var(--primary-color); width: 100%; margin-top: 15px; font-size: 14px;">立即咨询</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section" id="contact">
+            <div class="container">
+                <h2>准备好优化您的财税管理了吗？</h2>
+                <p>南粤金税专家团队随时待命，为您提供免费的企业税务健康体检。</p>
+                <a href="tel:400-123-4567" class="btn">拨打咨询热线</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="logo" style="margin-bottom: 20px; display: inline-block;">
+                        南粤金税
+                    </a>
+                    <p>南粤金税专注于为华南地区企业提供专业的财税服务，我们致力于通过数字化手段和专家智慧，帮助企业构建安全、高效的财税管理体系，实现可持续发展。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>服务项目</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">税务筹划</a></li>
+                        <li><a href="#">代理记账</a></li>
+                        <li><a href="#">审计评估</a></li>
+                        <li><a href="#">高新认证</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">专家团队</a></li>
+                        <li><a href="#">成功案例</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">服务条款</a></li>
+                        <li><a href="#">网站地图</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 南粤金税 版权所有 | 粤ICP备12345678号-1</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
