@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TVB云提供高清TVB电视剧全集在线观看服务，涵盖经典港剧、悬疑推理、古装武侠等热门栏目。支持多设备流畅播放，实时更新最新剧集。">
+    <meta name="keywords" content="TVB云, TVB电视剧, 香港电视剧, 在线观看, 港剧资源, TVB全集">
+    <title>TVB云-经典港剧全集在线观看与高清影视资源平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f; /* TVB Red */
+            --primary-hover: #b71c1c;
+            --bg-color: #f5f5f5;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-menu a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: var(--bg-color);
+            border-radius: 20px;
+            padding: 6px 12px;
+            width: 300px;
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            padding: 0 8px;
+            font-size: 14px;
+        }
+
+        .search-box button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c0000 0%, #5a0000 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=');
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.15);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 32px var(--spacing-unit);
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 16px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .section-more {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .section-more:hover {
+            color: var(--primary-color);
+        }
+
+        /* Grid Layouts */
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 24px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-cover {
+            position: relative;
+            width: 100%;
+            padding-top: 140%; /* 5:7 Aspect Ratio */
+            background-color: #eee;
+        }
+
+        .card-cover img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .card:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+        }
+
+        .card-body {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.4;
+        }
+
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .quality-badge {
+            background: #e3f2fd;
+            color: #1565c0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+
+        .card-tags {
+            margin-top: auto;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .card-tag {
+            font-size: 11px;
+            color: var(--text-secondary);
+            background: var(--bg-color);
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        /* Featured List */
+        .featured-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .featured-item {
+            display: flex;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .featured-img {
+            width: 200px;
+            flex-shrink: 0;
+        }
+
+        .featured-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-info {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .featured-info h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .featured-info p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 16px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .featured-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            background: white;
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* Categories Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .category-card {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: var(--radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .category-card:hover {
+            transform: translateY(-3px);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .category-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .category-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: white;
+            padding: 40px;
+            border-radius: var(--radius);
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 15px;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #999;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            .search-box {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .featured-item {
+                flex-direction: column;
+            }
+            .featured-img {
+                width: 100%;
+                height: 200px;
+            }
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5"></path>
+                    <path d="M2 12l10 5 10-5"></path>
+                </svg>
+                <span>TVB云</span>
+            </a>
+            <nav class="nav-menu">
+                <a href="#" class="active">首页</a>
+                <a href="#">电视剧</a>
+                <a href="#">电影</a>
+                <a href="#">综艺</a>
+                <a href="#">排行榜</a>
+                <a href="#">会员中心</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索TVB剧集...">
+                <button type="button">🔍</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>重温经典港剧，尽在TVB云</h1>
+            <p>收录千部TVB黄金时代剧集，高清画质，随时在线观看</p>
+            <div class="hero-tags">
+                <span class="tag">#刑侦破案</span>
+                <span class="tag">#豪门恩怨</span>
+                <span class="tag">#古装武侠</span>
+                <span class="tag">#都市职场</span>
+                <span class="tag">#经典重播</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Categories -->
+        <section class="section-header" style="margin-top: 40px;">
+            <h2 class="section-title">热门分类</h2>
+            <a href="#" class="section-more">查看全部 ></a>
+        </section>
+        <div class="category-grid">
+            <div class="category-card">
+                <span class="category-icon">🛡️</span>
+                <span class="category-name">刑侦破案</span>
+            </div>
+            <div class="category-card">
+                <span class="category-icon">⚔️</span>
+                <span class="category-name">古装武侠</span>
+            </div>
+            <div class="category-card">
+                <span class="category-icon">🏢</span>
+                <span class="category-name">职场商战</span>
+            </div>
+            <div class="category-card">
+                <span class="category-icon">💑</span>
+                <span class="category-name">爱情伦理</span>
+            </div>
+            <div class="category-card">
+                <span class="category-icon">🏥</span>
+                <span class="category-name">医疗剧</span>
+            </div>
+            <div class="category-card">
+                <span class="category-icon">👮</span>
+                <span class="category-name">警匪卧底</span>
+            </div>
+            <div class="category-card">
+                <span class="category-icon">🏰</span>
+                <span class="category-name">宫廷争斗</span>
+            </div>
+            <div class="category-card">
+                <span class="category-icon">📚</span>
+                <span class="category-name">TVB经典</span>
+            </div>
+        </div>
+
+        <!-- Featured List -->
+        <section class="section-header">
+            <h2 class="section-title">本周推荐</h2>
+        </section>
+        <div class="featured-list">
+            <article class="featured-item">
+                <div class="featured-img">
+                    <img src="https://picsum.photos/seed/tvb1/400/300" alt="新闻女王海报">
+                </div>
+                <div class="featured-info">
+                    <h3>新闻女王</h3>
+                    <p>讲述香港传媒界在数字化浪潮下的风云变幻，聚焦女性职场领袖的奋斗与博弈，剧情紧凑，演技在线。</p>
+                    <div class="card-tags">
+                        <span class="card-tag">职场</span>
+                        <span class="card-tag">TVB台庆剧</span>
+                        <span class="card-tag">2023</span>
+                    </div>
+                    <div class="featured-actions">
+                        <button class="btn btn-primary">立即观看</button>
+                        <button class="btn btn-outline">加入片单</button>
+                    </div>
+                </div>
+            </article>
+            <article class="featured-item">
+                <div class="featured-img">
+                    <img src="https://picsum.photos/seed/tvb2/400/300" alt="繁花海报">
+                </div>
+                <div class="featured-info">
+                    <h3>繁花</h3>
+                    <p>以90年代的上海为背景，讲述阿宝如何从普通青年蜕变为商业大亨的故事，王家卫监制，视觉盛宴。</p>
+                    <div class="card-tags">
+                        <span class="card-tag">商战</span>
+                        <span class="card-tag">年代剧</span>
+                        <span class="card-tag">经典重播</span>
+                    </div>
+                    <div class="featured-actions">
+                        <button class="btn btn-primary">立即观看</button>
+                        <button class="btn btn-outline">加入片单</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Latest Updates -->
+        <section class="section-header" style="margin-top: 48px;">
+            <h2 class="section-title">最新更新</h2>
+            <a href="#" class="section-more">查看全部 ></a>
+        </section>
+        <div class="grid-4">
+            <article class="card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/tvb3/300/420" alt="剧集封面">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">创世纪风云录</h3>
+                    <div class="card-meta">
+                        <span>更新至第24集</span>
+                        <span class="quality-badge">HD</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="card-tag">商战</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/tvb4/300/420" alt="剧集封面">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">迷雾追踪者</h3>
+                    <div class="card-meta">
+                        <span>更新至第18集</span>
+                        <span class="quality-badge">HD</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="card-tag">悬疑</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/tvb5/300/420" alt="剧集封面">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">锦绣良缘再续</h3>
+                    <div class="card-meta">
+                        <span>更新至第12集</span>
+                        <span class="quality-badge">HD</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="card-tag">古装</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/tvb6/300/420" alt="剧集封面">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">都市爱情故事</h3>
+                    <div class="card-meta">
+                        <span>更新至第30集</span>
+                        <span class="quality-badge">HD</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="card-tag">爱情</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Top Charts -->
+        <section class="section-header" style="margin-top: 48px;">
+            <h2 class="section-title">热播榜单</h2>
+            <a href="#" class="section-more">查看全部 ></a>
+        </section>
+        <div class="grid-3">
+            <article class="card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/tvb7/400/250" alt="剧集封面">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">潜行狙击</h3>
+                    <div class="card-meta">
+                        <span>评分: 9.2</span>
+                        <span class="quality-badge">经典</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="card-tag">警匪</span>
+                        <span class="card-tag">动作</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/tvb8/400/250" alt="剧集封面">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">金枝欲孽</h3>
+                    <div class="card-meta">
+                        <span>评分: 9.5</span>
+                        <span class="quality-badge">神剧</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="card-tag">宫斗</span>
+                        <span class="card-tag">历史</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-cover">
+                    <img src="https://picsum.photos/seed/tvb9/400/250" alt="剧集封面">
+                    <div class="play-overlay">
+                        <div class="play-icon">▶</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">法证先锋</h3>
+                    <div class="card-meta">
+                        <span>评分: 9.0</span>
+                        <span class="quality-badge">热门</span>
+                    </div>
+                    <div class="card-tags">
+                        <span class="card-tag">刑侦</span>
+                        <span class="card-tag">科普</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="section-title">常见问题</h2>
+            <div class="faq-item">
+                <div class="faq-question">TVB云支持哪些设备观看？</div>
+                <div class="faq-answer">TVB云支持电脑端浏览器、手机APP、平板电脑以及智能电视端观看，实现多端同步，随时随地追剧。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">网站上的剧集是官方正版资源吗？</div>
+                <div class="faq-answer">本站致力于整理和分享公开可获取的影视资讯及资源，所有内容仅供个人学习交流使用，请支持正版影视平台。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何订阅最新剧集更新？</div>
+                <div class="faq-answer">您可以在首页点击“会员中心”注册账号，开启剧集更新提醒功能，第一时间获取您关注剧集的最新动态。</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于TVB云</h4>
+                <p style="font-size: 14px; line-height: 1.8;">TVB云是一个专注于香港电视剧的在线观看平台，致力于为用户提供高清、流畅的追剧体验。我们收录了从80年代至今的经典港剧，满足不同年龄层观众的怀旧与追新需求。</p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">网站地图</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>热门分类</h4>
+                <ul>
+                    <li><a href="#">刑侦破案</a></li>
+                    <li><a href="#">古装武侠</a></li>
+                    <li><a href="#">职场商战</a></li>
+                    <li><a href="#">TVB经典</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li>邮箱：support@tvbyun.com</li>
+                    <li>客服热线：400-123-4567</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 TVB云. All Rights Reserved. 本站仅用于技术展示与资源整理。</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Simple Search Simulation
+        const searchBtn = document.querySelector('.search-box button');
+        const searchInput = document.querySelector('.search-box input');
+        
+        searchBtn.addEventListener('click', () => {
+            if(searchInput.value.trim()) {
+                alert('正在搜索：' + searchInput.value + '\n（演示功能：此处应跳转至搜索结果页）');
+            }
+        });
+
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                if(searchInput.value.trim()) {
+                    alert('正在搜索：' + searchInput.value + '\n（演示功能：此处应跳转至搜索结果页）');
+                }
+            }
+        });
+    </script>
+</body>
+  </html>
