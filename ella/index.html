@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ella婚礼视频在线观看平台，提供高画质婚礼摄影摄像作品展示、婚礼纪实短片分享及婚礼策划灵感参考。">
+    <meta name="keywords" content="ella婚礼视频,婚礼视频,婚礼纪实,婚礼摄影,婚礼摄像,婚礼短片">
+    <title>ella婚礼视频-精选婚礼纪实影像与高光时刻合集</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d4a373;
+            --primary-dark: #b08968;
+            --accent-color: #faedcd;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --bg-body: #fdfbf7;
+            --bg-white: #ffffff;
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 12px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+            margin-right: 10px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('https://picsum.photos/seed/wedding_hero/1920/1080.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            background-color: var(--bg-white);
+            padding: 20px 0;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .filter-list {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-item {
+            padding: 8px 16px;
+            border-radius: 20px;
+            background-color: #f5f5f5;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .filter-item:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-dark);
+        }
+
+        .filter-item.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .video-card {
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .thumbnail-wrapper {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            overflow: hidden;
+        }
+
+        .thumbnail {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .video-card:hover .thumbnail {
+            transform: scale(1.05);
+        }
+
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .play-icon::after {
+            content: '';
+            border-style: solid;
+            border-width: 10px 0 10px 18px;
+            border-color: transparent transparent transparent var(--primary-color);
+            margin-left: 4px;
+        }
+
+        .video-card:hover .play-icon {
+            transform: translate(-50%, -50%) scale(1.1);
+            background-color: var(--primary-color);
+        }
+
+        .play-icon::after {
+            border-color: transparent transparent transparent white;
+        }
+
+        .duration-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-category {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            line-height: 1.4;
+            color: var(--text-main);
+        }
+
+        .card-meta {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #ddd;
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--bg-white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .feature-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Upload CTA */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+            margin: 60px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-main);
+            transition: background-color 0.2s;
+        }
+
+        .faq-question:hover {
+            background-color: #fafafa;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 20px;
+        }
+
+        .faq-answer p {
+            padding-bottom: 20px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px; /* Approximate height */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #ccc;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#d4a373"/>
+                </svg>
+                <span>Ella婚礼视频</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">婚纱摄影</a></li>
+                    <li><a href="#">婚礼纪实</a></li>
+                    <li><a href="#">婚礼短片</a></li>
+                    <li><a href="#">灵感库</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">上传作品</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>记录爱情最美的瞬间</h1>
+                <p>汇聚全网优质 Ella 婚礼视频作品，为您呈现最动人的婚纱照与婚礼纪实影像。</p>
+                <div style="margin-top: 20px;">
+                    <input type="text" placeholder="搜索婚礼视频、摄影师..." style="padding: 12px 20px; border-radius: 30px; border: none; width: 300px; outline: none;">
+                    <button class="btn btn-primary" style="border-radius: 30px; padding: 12px 30px; margin-left: 10px;">搜索</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <div class="container">
+            <div class="filter-bar">
+                <div class="filter-list">
+                    <div class="filter-item active">全部</div>
+                    <div class="filter-item">中式婚礼</div>
+                    <div class="filter-item">西式教堂</div>
+                    <div class="filter-item">户外草坪</div>
+                    <div class="filter-item">旅拍纪实</div>
+                    <div class="filter-item">微电影</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Content Grid -->
+        <section class="section container">
+            <div class="section-header">
+                <h2 class="section-title">热门 Ella 婚礼视频</h2>
+                <p class="section-subtitle">精选近期最受关注的婚礼影像记录</p>
+            </div>
+
+            <div class="video-grid">
+                <!-- Video Card 1 -->
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/wedding1/640/360" alt="婚礼视频封面" class="thumbnail">
+                        <div class="play-icon"></div>
+                        <span class="duration-badge">12:45</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">户外草坪</div>
+                        <h3 class="card-title">夏日微风下的浪漫誓言 - 湖畔草坪婚礼纪实</h3>
+                        <div class="card-meta">
+                            <div class="author-info">
+                                <img src="https://picsum.photos/seed/avatar1/50/50" alt="摄影师" class="author-avatar">
+                                <span>光影工作室</span>
+                            </div>
+                            <span>2.3万次播放</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Card 2 -->
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/wedding2/640/360" alt="婚礼视频封面" class="thumbnail">
+                        <div class="play-icon"></div>
+                        <span class="duration-badge">08:20</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">中式婚礼</div>
+                        <h3 class="card-title">古韵流芳 - 精致中式传统婚礼全程记录</h3>
+                        <div class="card-meta">
+                            <div class="author-info">
+                                <img src="https://picsum.photos/seed/avatar2/50/50" alt="摄影师" class="author-avatar">
+                                <span>东方影像</span>
+                            </div>
+                            <span>1.8万次播放</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Card 3 -->
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/wedding3/640/360" alt="婚礼视频封面" class="thumbnail">
+                        <div class="play-icon"></div>
+                        <span class="duration-badge">15:10</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">西式教堂</div>
+                        <h3 class="card-title">神圣时刻 - 教堂婚礼微电影与跟拍</h3>
+                        <div class="card-meta">
+                            <div class="author-info">
+                                <img src="https://picsum.photos/seed/avatar3/50/50" alt="摄影师" class="author-avatar">
+                                <span>唯美视觉</span>
+                            </div>
+                            <span>5.1万次播放</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Card 4 -->
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/wedding4/640/360" alt="婚礼视频封面" class="thumbnail">
+                        <div class="play-icon"></div>
+                        <span class="duration-badge">09:55</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">旅拍纪实</div>
+                        <h3 class="card-title">海岛蜜月 - 巴厘岛婚礼视频全记录</h3>
+                        <div class="card-meta">
+                            <div class="author-info">
+                                <img src="https://picsum.photos/seed/avatar4/50/50" alt="摄影师" class="author-avatar">
+                                <span>蜜月日记</span>
+                            </div>
+                            <span>3.4万次播放</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Card 5 -->
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/wedding5/640/360" alt="婚礼视频封面" class="thumbnail">
+                        <div class="play-icon"></div>
+                        <span class="duration-badge">11:30</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">微电影</div>
+                        <h3 class="card-title">十年之约 - 婚礼主题微电影完整版</h3>
+                        <div class="card-meta">
+                            <div class="author-info">
+                                <img src="https://picsum.photos/seed/avatar5/50/50" alt="摄影师" class="author-avatar">
+                                <span>导演组</span>
+                            </div>
+                            <span>8.9万次播放</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Video Card 6 -->
+                <article class="video-card">
+                    <div class="thumbnail-wrapper">
+                        <img src="https://picsum.photos/seed/wedding6/640/360" alt="婚礼视频封面" class="thumbnail">
+                        <div class="play-icon"></div>
+                        <span class="duration-badge">07:45</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-category">户外草坪</div>
+                        <h3 class="card-title">秋日私语 - 森林主题婚礼视频</h3>
+                        <div class="card-meta">
+                            <div class="author-info">
+                                <img src="https://picsum.photos/seed/avatar6/50/50" alt="摄影师" class="author-avatar">
+                                <span>森系摄影</span>
+                            </div>
+                            <span>1.2万次播放</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <button class="btn btn-outline" style="padding: 12px 40px;">加载更多视频</button>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">为什么选择我们</h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">4K</div>
+                        <h3>超清画质</h3>
+                        <p>所有 Ella 婚礼视频均采用 4K 高清拍摄，还原婚礼每一个细腻瞬间。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">❤</div>
+                        <h3>情感共鸣</h3>
+                        <p>专业剪辑师精心调色，捕捉感人泪点，让视频成为爱情最好的见证。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">📱</div>
+                        <h3>多端观看</h3>
+                        <p>支持手机、平板、电脑全平台流畅播放，随时随地重温幸福时刻。</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔒</div>
+                        <h3>隐私保护</h3>
+                        <p>上传作品自动加密，保障新人隐私，仅授权好友或公开社区观看。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>记录您的专属幸福</h2>
+                <p>无论您是正在筹备婚礼的新人，还是寻找灵感的策划师，这里都有您需要的 Ella 婚礼视频素材。</p>
+                <button class="btn" style="background: white; color: var(--primary-dark); padding: 12px 30px; border-radius: 30px; font-weight: bold; cursor: pointer;">立即上传作品</button>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section container">
+            <div class="section-header">
+                <h2 class="section-title">常见问题</h2>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">如何上传我的婚礼视频？</div>
+                    <div class="faq-answer">
+                        <p>点击页面右上角的“上传作品”按钮，注册/登录后，按照提示填写婚礼信息、上传视频文件并设置观看权限即可完成发布。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">视频播放有广告吗？</div>
+                    <div class="faq-answer">
+                        <p>本站 Ella 婚礼视频平台承诺提供纯净的观看体验，在非 VIP 会员状态下，视频播放前会有极少量贴片广告，感谢您的理解。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">可以下载 Ella 婚礼视频吗？</div>
+                    <div class="faq-answer">
+                        <p>出于版权保护考虑，普通用户仅支持在线观看。部分授权摄影师或会员用户可申请下载高清原片，具体请联系客服。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何举报侵权内容？</div>
+                    <div class="faq-answer">
+                        <p>如果您发现视频内容涉及版权纠纷或违规，请点击视频播放页右下角的“举报”按钮，我们将尽快审核处理。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Ella婚礼视频</h3>
+                    <p>专注于分享高品质婚礼影像作品，致力于成为国内最大的婚礼视频社区与素材库。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>浏览分类</h4>
+                    <ul>
+                        <li><a href="#">婚纱摄影</a></li>
+                        <li><a href="#">婚礼纪实</a></li>
+                        <li><a href="#">求婚视频</a></li>
+                        <li><a href="#">备婚攻略</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">平台介绍</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">用户指南</a></li>
+                        <li><a href="#">上传教程</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Ella婚礼视频平台 版权所有 | 仅供展示参考</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Filter Logic (Visual only for demo)
+            const filterItems = document.querySelectorAll('.filter-item');
+            filterItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    filterItems.forEach(i => i.classList.remove('active'));
+                    item.classList.add('active');
+                    // In a real app, this would filter the video grid
+                });
+            });
+        });
+    </script>
+</body>
+                  </html>
